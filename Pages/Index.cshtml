@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<div class="text-center">
+    <h1 class="display-1">Home Page</h1>
+</div>
+
+<div class="row">
+    @foreach (var product in Model.Products)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="/img/@product.ImgPath" class="card-img-top"    alt="@product.Name" onerror="this.onerror=null;this.src='https://via.placeholder.com/286x180';" />
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text">@product.Dicription</p>
+                    <p class="text-danger fw-bold">@product.Price.ToString("N2")</p>
+                    <a asp-page="/account/Login" asp-route-id="@product.Id" class="btn btn-primary">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

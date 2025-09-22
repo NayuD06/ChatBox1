@@ -1,0 +1,41 @@
+@page
+@model ECommerceALLInOne.Pages.Product.ProductMode
+@{
+    Layout = "_Layout";
+}
+<h2>Create Product Page</h2>
+
+
+<form method="post" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td><label for="Name">Name:</label></td>
+            <td><input type="text" asp-for="Name" id="Name"></td>
+        </tr>
+        <tr>
+            <td><label for="Description">Description:</label></td>
+            <td><textarea asp-for="Dicription"></textarea></td>
+        </tr>
+        <tr>
+            <td><label for="Price">Price:</label></td>
+            <td><input type="number" asp-for="Price" id="Price"></td>
+        </tr>
+        <tr>
+            <td><label for="Stock">Stock:</label></td>
+            <td><input type="number" asp-for="Stock" id="Stock"></td>
+        </tr>
+        <tr>
+            <td><label for="UploadImage">UploadImage:</label></td>
+            <td><input type="file" asp-for="UploadImg" id="UploadImage"></td>
+        </tr>
+       
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <input type="submit" value="Create">
+            </td>
+        </tr>
+
+
+   
+    </table>
+</form>
